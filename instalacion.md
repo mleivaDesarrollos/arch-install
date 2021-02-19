@@ -13,7 +13,8 @@ ls /usr/share/kbd/keymaps/**/*.map.gz
 Una vez identificado el teclado hay que elegirlo, se hace de la siguiente manera:
 
 ```bash
-loadkeys de-latin1
+loadkeys la-latin1 # Latinomerica español
+loadkeys us # Estados unidos vivobook
 ```
 
 ## Verificar si estamos en EFI o en MBR
@@ -37,13 +38,19 @@ ip link
 En caso de que tengas una notebook, puede que tengas que habilitar el wifi con la combinación de teclas adecuadas. En modo consola seguramente no va a funcionar, por lo que deberia ejecutarse un comando para habilitarlo:
 
 ```bash
-rfkill
+rfkill list # Para ver si la placa de red WiFi esta bloqueda, verificar igual que este activo con la combinación de teclas de wifi.
+rfkill unblock wifi # En caso de estar bloqueado, con este comando se desbloquea
 ```
 
 En el caso de tener que conectarse por medio de red WIFI hay que utilizar el siguiente comando:
 
 ```bash
-iwctl
+iwctl # Modo consola para red inalambrica
+########## en el CLI de IWCTL
+device list # Mostrar el listado de dispositivos
+station (DISPOSITIVO) scan # Buscamos las redes WIFI
+station $(DISPOSITIVO) get-networks # Traemos las redes buscadas
+station $(DISPOSITIVO) connect $(NOBRE DE RED) #Conectamos a la red
 ```
 
 Hay una serie de comandos que hay que ejecutar para poder conectarse, para eso hay que seguir la guia de esta wiki:
