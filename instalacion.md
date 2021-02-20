@@ -1,4 +1,4 @@
-# Instalación de ArchLinux
+# Instalación de ArchLinux - last
 
 Voy a tomar una serie de notas en base a la instalación
 

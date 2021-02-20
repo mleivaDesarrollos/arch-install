@@ -14,3 +14,5 @@ cp ./hosts /etc/hosts
 # Grub INstall
 grub-install --target=x86_64-efi
 grub-mkconfig -o /boot/grub/grub.cfg
+# Enabling services
+./enabling-services.sh
