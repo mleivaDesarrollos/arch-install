@@ -39,6 +39,15 @@ git clone https://aur.archlinux.org/slack-desktop && cd slack-desktop && makepkg
 
 # Mariadb install
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# Git config
+git config --global user.name 'Maximiliano Leiva'
+git config --global core.editor nvim
+
+# Instalacion de plugins de VIM
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir ~/.config/nvim
+cp ./nvim_config/* ~/.config/nvim
 
 # Clean dirs
 rm -rf ~/build
