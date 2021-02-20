@@ -3,10 +3,9 @@
 ./core-packages/amd-packages.sh
 ./dde/kde.sh
 echo 'Copiando los scripts de chroot a la carpeta home'
-cp -r ./chroot /mnt/home/
+mkdir /mnt/home/arch-install
+cp -r ./* /mnt/home/arch-install
 echo 'Entrando en modo chroot de la carpeta y ejecutando scripts'
-arch-chroot /mnt /home/chroot/vivobook.sh
-echo 'Removiendo carpeta temporal chroot'
-rm -rf /mnt/home/chroot
+arch-chroot /mnt /home/arch-install/chroot/vivobook.sh
 echo 'Desmontado todo lo generado'
 umount -R /mnt

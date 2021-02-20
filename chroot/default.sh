@@ -20,4 +20,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # Enabling services
 echo 'Habilitando los servicios configurados'
 ./enabling-services.sh
+# Cambiando configuraciones de git
+git config --global core.editor nvim
+git config --global user.name 'Maximiliano Leiva'
 
