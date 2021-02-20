@@ -1,0 +1,8 @@
+[Unit]
+Description=TDP Vivobook Config
+
+[Service]
+ExecStart=/usr/bin/low-tdp-ryzen
+
+[Install]
+WantedBy=multi-user.target
