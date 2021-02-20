@@ -1,6 +1,10 @@
 #!/bin/bash
 mkdir ~/build
 
+# Copying config files of nvim
+mkdir ~/.config/nvim
+cp ./nvim_config/* ~/.config/nvim
+
 # VSCODIUM AND MARKETPLACE
 cd ~/build/
 git clone https://aur.archlinux.org/vscodium-bin && cd vscodium-bin && makepkg -si --noconfirm
@@ -46,8 +50,6 @@ git config --global core.editor nvim
 # Instalacion de plugins de VIM
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-mkdir ~/.config/nvim
-cp ./nvim_config/* ~/.config/nvim
 
 # Clean dirs
 rm -rf ~/build
