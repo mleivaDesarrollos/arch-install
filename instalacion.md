@@ -319,3 +319,18 @@ deepin deepin-extra lightdm
 ## Scripts Personalizados
 
 Para la instalacion de paquetes AUR en modo chroot hay que hacer un par de movidas, en el cual hay una en la que depende de que nobody tenga permisos de sudo sin pedir contraseña. Por motivos de instalación puede ser util, pero es peligroso dejar el sudo abierto para el usuario nobody. hay que aplicarle un sudoers temporal al proceso y luego regresar el original
+
+## Recuperacion de paquetes instalados de una instalacion activa
+
+Para poder recuperar los paquetes instalados de una instalacion correcta se puede correr el siguiente comando
+
+```
+pacman -Qqen > packagelist.txt
+```
+
+En caso de necesitar recuperar una instalacion a partir de un listado de paquetes se puede ejecutar lo siguiente
+
+```
+pacman -s --needed < packagelist.txt
+pacstrap /mnt < packagelist.txt
+```
