@@ -1,0 +1,8 @@
+[Unit]
+Description=OpenRGB Enable RAM and Motherboard ROG B450 ITX STRIX CONTROL
+
+[Service]
+ExecStart=/usr/bin/openrgb-enable-motherboard-ram
+
+[Install]
+WantedBy=multi-user.target 
