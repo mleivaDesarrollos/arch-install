@@ -1,20 +1,16 @@
 #!/bin/bash
-# temp dir
-mkdir ~/build
+# Ejecutamos los paquetes basicos
+./basic-packages.sh
 
 # Copying all oc vivobook controls
-sudo cp ../custom-services/vivobook-cpu-tdp-adjust.service /etc/systemd/system
-sudo cp ../helper-scripts/vivobook/low-tdp-ryzen /usr/bin
-sudo chmod +x /usr/bin/low-tdp-ryzen
+sudo cp ./vivobook/tdp-config.service /etc/systemd/system
+sudo cp ./vivobook/low-tdp-ryzen /usr/bin
 
 # Ryzenadj
-cd ~/build
+cd ~/.aur-packages
 git clone https://aur.archlinux.org/ryzenadj-git && cd ryzenadj-git && makepkg -si --noconfirm
 
 # enable oc services
-sudo systemctl enable vivobook-cpu-tdp-adjust.service
-sudo systemctl start vivobook-cpu-tdp-adjust.service
-
-# clean temp dir
-rm -rf ~/build
+sudo systemctl enable tdp-config.service
+sudo systemctl start tdp-config.service
 
