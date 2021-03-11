@@ -29,9 +29,13 @@ cd ~/.aur-packages/
 git clone https://aur.archlinux.org/oh-my-zsh-git && cd oh-my-zsh-git && makepkg -si --noconfirm
 cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
 
-# Timeshift
+# Timeshift - Backup de sistema
 cd ~/.aur-packages/
 git clone https://aur.archlinux.org/timeshift && cd timeshift && makepkg -si --noconfirm
+
+# Backintime - Backup de usuario
+cd ~/.aur-packages/
+git clone https://aur.archlinux.org/backintime && cd backintime && makepkg -si --noconfirm
 
 # FreeFileSync
 cd ~/.aur-packages
@@ -41,12 +45,22 @@ git clone https://aur.archlinux.org/freefilesync-bin && cd freefilesync-bin && m
 cd ~/.aur-packages
 git clone https://aur.archlinux.org/slack-desktop && cd slack-desktop && makepkg -si --noconfirm
 
+# Electron9 - Para balena etcher
+
+cd ~/.aur-packages
+git clone https://aur.archlinux.org/electron9 && cd electron9 && makepkg -si --noconfirm
+
+# Balena Etcher
+cd ~/.aur-packages
+git clone https://aur.archlinux.org/balena-etcher && cd balena-etcher && makepkg -si --noconfirm
+
 # Mariadb install
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 # Git config
 git config --global user.name 'Maximiliano Leiva'
 git config --global core.editor nvim
+git config --global push.default current
 
 # Instalacion de claves SSH
 echo 'Creacion de claves - no usar passphrase y dejar rutas por defecto'
