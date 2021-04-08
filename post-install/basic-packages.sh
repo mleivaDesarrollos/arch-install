@@ -1,6 +1,9 @@
 #!/bin/bash
 mkdir ~/.aur-packages
 
+# Install Plug Plugin for nvim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # Copying config files of nvim
 mkdir ~/.config/nvim
 cp ./nvim_config/* ~/.config/nvim
@@ -44,15 +47,6 @@ git clone https://aur.archlinux.org/freefilesync-bin && cd freefilesync-bin && m
 # Slack Desktop
 cd ~/.aur-packages
 git clone https://aur.archlinux.org/slack-desktop && cd slack-desktop && makepkg -si --noconfirm
-
-# Electron9 - Para balena etcher
-
-cd ~/.aur-packages
-git clone https://aur.archlinux.org/electron9 && cd electron9 && makepkg -si --noconfirm
-
-# Balena Etcher
-cd ~/.aur-packages
-git clone https://aur.archlinux.org/balena-etcher && cd balena-etcher && makepkg -si --noconfirm
 
 # Mariadb install
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
