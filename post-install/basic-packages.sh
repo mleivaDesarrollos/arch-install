@@ -57,6 +57,12 @@ git config --global user.name 'Maximiliano Leiva'
 git config --global core.editor nvim
 git config --global push.default current
 
+# Instalacion de Powerlevel 10k
+sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+cp ./zsh_config/.zshrc ~/
+cp ./zsh_config/.p10k.zsh ~/
+echo 'PowerLevel 10k Instalado, recordar instalar y configurar las fuentes Meslo para optimo uso'
+
 # Instalacion de claves SSH
 echo 'Creacion de claves - no usar passphrase y dejar rutas por defecto'
 ssh-keygen
