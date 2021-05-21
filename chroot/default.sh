@@ -11,6 +11,8 @@ cp ./locale.gen /etc/locale.gen
 locale-gen
 echo 'Estableciendo el idioma por defecto a espanol argentina'
 cp ./locale.conf /etc/locale.conf
+echo 'Copiando la configuración de NetworkManager'
+cp ./NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 # ZAKTORIUS CREATION
 ./create-user.sh
 # Grub INstall

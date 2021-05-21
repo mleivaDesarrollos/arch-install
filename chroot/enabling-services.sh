@@ -3,6 +3,9 @@
 # Habilitamos la administracion automatica de red
 systemctl enable NetworkManager.service
 
+#Deshabilitamos el servicio por defecto WPA Supplicant
+systemctl disable wpa_supplicant.service
+
 # Habilitamos el servicio de control inalambrico de red
 systemctl enable iwd.service
 
