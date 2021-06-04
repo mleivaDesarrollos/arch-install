@@ -1,5 +1,4 @@
 call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -43,8 +42,8 @@ endif
 "  call timer_start(500, 'ShowDocIfNoDiagnostic')
 "endfunction
 
-" autocmd CursorHoldI * :call <SID>show_hover_doc()
-" autocmd CursorHold * :call <SID>show_hover_doc()
+"autocmd CursorHoldI * :call <SID>show_hover_doc()
+"autocmd CursorHold * :call <SID>show_hover_doc()
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -53,6 +52,7 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader> do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
 
@@ -100,7 +100,7 @@ nnoremap <A-l> <C-w>l
 nnoremap <S-Left>  gT
 nnoremap <S-Right> gt
 
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.js,*.ts,*.tsx"
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.jsx,*.tsx"
 let g:closetag_xhtml_filetypes = 'xhtml,javascript.jsx,jsx,typescript.tsx,tsx'
 
 autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
