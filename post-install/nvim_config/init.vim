@@ -13,7 +13,9 @@ Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'dNitro/vim-pug-complete', { 'for': ['jade', 'pug'] }
 Plug 'preservim/nerdcommenter'
+Plug 'dyng/ctrlsf.vim'
 call plug#end()
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
@@ -23,6 +25,7 @@ let g:coc_global_extensions = [
   \ 'coc-markdownlint',
   \ 'coc-sql',
   \ 'coc-marketplace',
+  \ 'coc-styled-components',
   \ ]
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
@@ -45,13 +48,13 @@ endif
 "autocmd CursorHoldI * :call <SID>show_hover_doc()
 "autocmd CursorHold * :call <SID>show_hover_doc()
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gr <Plug>(coc-references)
 
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <leader> do <Plug>(coc-codeaction)
+nmap <silent>[g <Plug>(coc-diagnostic-prev)
+nmap <silent>]g <Plug>(coc-diagnostic-next)
+nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 
 nnoremap <silent> K :call CocAction('doHover')<CR>
@@ -86,6 +89,10 @@ nmap ,n :NERDTreeFind<CR>
 set splitright
 set splitbelow
 
+" plugin de busqueda ctrlsf
+nmap     <C-F>f <Plug>CtrlSFPrompt                  
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
 " use alt+hjkl to move between split/vsplit panels
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j

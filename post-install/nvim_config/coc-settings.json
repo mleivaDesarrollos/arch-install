@@ -3,11 +3,38 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "graphql"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "graphql",
+    "html",
+    "vue",
+    "markdown",
+    "json"
+  ],
   "eslint.autoFixOnSave": true,
-  "eslint.filetypes": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "prettier.disableSuccessMessage": true
+  "eslint.filetypes": [
+    "graphql",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "prettier.disableSuccessMessage": true,
+  "languageserver": {
+    "graphql": {
+      "command": "graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["typescript", "typescriptreact", "graphql"]
+    }
+  }
 }
