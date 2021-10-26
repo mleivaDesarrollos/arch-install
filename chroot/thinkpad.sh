@@ -2,9 +2,9 @@
 cd /home/arch-install/chroot
 ./default.sh
 # Copiando el archivo hosts y hostname de desktop a la carpeta correspondiente de etc
-echo 'Copiando los hosts de Thinkpad'
-cp ./thinkpad/hostname /etc/hostname
-cp ./thinkpad/hosts /etc/hosts
+echo 'Copiando los hosts de Dell XPS'
+cp ./dellxps/hostname /etc/hostname
+cp ./dellxps/hosts /etc/hosts
 echo 'Habilitando servicio SDDM de KDE';
 ./enable-services-kde.sh
 echo 'entregando permisos sobre carpeta archinstall a zaktorius y moviendola dentro'
