@@ -4,6 +4,8 @@
 ./core-packages/x11-install.sh
 ./core-packages/wayland-install.sh
 ./dde/gnome.sh
+echo 'Paquetes particulares para esta notebook'
+pacstrap /mnt tlp
 echo 'Copiando los scripts de chroot a la carpeta home'
 mkdir /mnt/home/arch-install
 cp -r ./* /mnt/home/arch-install
