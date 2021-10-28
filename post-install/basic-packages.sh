@@ -20,22 +20,10 @@ git clone https://aur.archlinux.org/postman-bin && cd postman-bin && makepkg -si
 cd ~/.aur-packages/
 git clone https://aur.archlinux.org/typora && cd typora && makepkg -si --noconfirm
 
-# Pamac
-cd ~/.aur-packages/
-git clone https://aur.archlinux.org/pamac-aur && cd pamac-aur && makepkg -si --noconfirm
-
 # Oh-my-zsh
 cd ~/.aur-packages/
 git clone https://aur.archlinux.org/oh-my-zsh-git && cd oh-my-zsh-git && makepkg -si --noconfirm
 cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
-
-# Timeshift - Backup de sistema
-cd ~/.aur-packages/
-git clone https://aur.archlinux.org/timeshift && cd timeshift && makepkg -si --noconfirm
-
-# Backintime - Backup de usuario
-cd ~/.aur-packages/
-git clone https://aur.archlinux.org/backintime && cd backintime && makepkg -si --noconfirm
 
 # FreeFileSync
 cd ~/.aur-packages
@@ -49,8 +37,10 @@ git clone https://aur.archlinux.org/slack-desktop && cd slack-desktop && makepkg
 cd ~/.aur-packages
 git clone https://aur.archlinux.org/google-chrome && cd google-chrome && makepkg -si --noconfirm
 
-# Mariadb install
-sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# Spotify
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+cd ~/.aur-packages
+git clone https://aur.archlinux.org/spotify && cd spotify && makepkg -si --noconfirm
 
 # Git config
 git config --global user.name 'Maximiliano Leiva'
@@ -74,4 +64,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Instalacion de graphQL Cli para vim
-npm i -g graphql graphql-language-service-cli
+sudo npm i -g graphql graphql-language-service-cli
